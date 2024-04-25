@@ -4,7 +4,7 @@ import Modal from './Components/Modal';
 import taiwan_districts from './Components/taiwan_districts.json'
 
 function Footer() {
-  const [msgMailTitle,setMsgMailTitle] = useState('龍築靜玥的表單')
+  const [msgMailTitle,setMsgMailTitle] = useState('富堡晶鑄的表單')
   const [mailSent, setmailSent] = useState(false);
   const [error, setError] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
@@ -32,8 +32,8 @@ function Footer() {
   const onSubmit = data => {
     console.log(data)
 
-    let url1 = process.env.PUBLIC_URL+'/assets/sendsee.php'
-    let url2 = process.env.PUBLIC_URL+'/api/contact/index.php'
+    let url1 = './assets/sendsee.php'
+    let url2 = '/api/contact/index.php'
     fetch(url1, {
       method: 'POST',
       headers: {"Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
@@ -62,13 +62,14 @@ function Footer() {
     <div
       className='w-full h-full  bg-cover bg-bottom bg-no-repeat pt-[8%] px-[5%] relative bg-[#F7E4D2]'
       style={{
-        backgroundImage: `url('/images/release/footer_bg.png'})`,
+        backgroundImage: `url('./images/release/footer_bg.png'})`,
       }}
     >
+      <div className=' absolute -top-[10%] right-0 -z-0 w-[30%] ' data-aos="fade-left" data-aos-duration="1000"><img src="./images/section_right03.png" alt="" /></div>
       <div className='flex flex-col md:flex-row w-full mx-auto gap-14 py-1 pb-20 '>
         <div className='md:w-1/2'>
           <div className='w-2/3 md:w-[55%]' data-aos="fade-up" data-aos-duration="1000">
-            <img src={'/images/footer_title.png'} alt="" />
+            <img src={'./images/footer_title.png'} alt="" />
           </div>
           <div className='w-full h-[280px] mt-[5%]'>
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3613.973526588991!2d121.36183869999998!3d25.0688864!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a72933eb3ca1%3A0xcf425b8e84f454a2!2zMjQ05paw5YyX5biC5p6X5Y-j5Y2A5paH5YyW5LiJ6Lev5LiA5q61ICYg5b-g5a2d5LiJ6Lev!5e0!3m2!1szh-TW!2stw!4v1713986261917!5m2!1szh-TW!2stw" width="100%" height="100%"  allowFullScreen  loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
@@ -77,7 +78,7 @@ function Footer() {
         </div>
         <div className='w-4/5 md:w-1/2 mx-auto' >
           <div className='w-full md:w-full mx-auto'>
-            <img src={'/images/form_title.png'} alt="" />
+            <img src={'./images/form_title.png'} alt="" />
           </div>
           {/* 表單 */}
           <div className='md:w-full mx-auto'>
@@ -137,9 +138,6 @@ function Footer() {
               </div>
               <div>{error}  {mailSent}</div>            
             </form>
-          </div>
-          <div className='mt-10 md:w-1/2 mx-auto'>
-            <img src={'/images/release/footer_subtitle.png'} alt=""  className='max-w-full' />
           </div>
 
         </div>
