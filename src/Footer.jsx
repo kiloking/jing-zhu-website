@@ -67,7 +67,7 @@ function Footer() {
     >
       <div className='flex flex-col md:flex-row w-full mx-auto gap-14 py-1 pb-20 '>
         <div className='md:w-1/2'>
-          <div className='w-2/3 md:w-[55%]'>
+          <div className='w-2/3 md:w-[55%]' data-aos="fade-up" data-aos-duration="1000">
             <img src={'/images/footer_title.png'} alt="" />
           </div>
           <div className='w-full h-[280px] mt-[5%]'>
